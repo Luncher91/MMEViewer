@@ -1,0 +1,156 @@
+﻿<Window x:Class="MMEViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MMEViewer"
+        xmlns:data="clr-namespace:MMEData;assembly=MMEData"
+        xmlns:model="clr-namespace:MMEViewer.MMEViewModel"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="MMEViewer" Height="600" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" x:Name="menu" >
+            <MenuItem Header="File">
+                <MenuItem Header="Open" x:Name="openFileMenu" Click="openFileMenu_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+
+                <TreeView Grid.Row="0" x:Name="dataExplorerTreeView" SelectedItemChanged="dataExplorerTreeView_SelectedItemChanged" 
+                          MouseDoubleClick="dataExplorerTreeView_MouseDoubleClick" FontFamily="Global Monospace" FontSize="12">
+                    <TreeView.Resources>
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMETestModel}" ItemsSource="{Binding Path=SubElements}" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=DataSet.Name}" Tag="{Binding DataSet}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEChannelsModel}" ItemsSource="{Binding Path=SubElements}" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Channel" Tag="{Binding ActualChannels}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEChannelModel}" >
+                            <TextBlock Text="{Binding Path=ActualChannel.Meta.Code}" Tag="{Binding ActualChannel}"/>
+                        </HierarchicalDataTemplate>
+
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEPhotosModel}" ItemsSource="{Binding Path=SubElements}" >
+                            <TextBlock Text="Photo" Tag="{Binding ActualPhotos}"/>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEPhotoModel}" >
+                            <TextBlock Text="{Binding Path=ActualPhoto.Filename}" Tag="{Binding ActualPhoto}"/>
+                        </HierarchicalDataTemplate>
+
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEMoviesModel}" ItemsSource="{Binding Path=SubElements}" >
+                            <TextBlock Text="Movie" Tag="{Binding ActualMovies}"/>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEMovieModel}" >
+                            <TextBlock Text="{Binding Path=ActualMovie.Filename}" Tag="{Binding ActualMovie}"/>
+                        </HierarchicalDataTemplate>
+
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEDocumentsModel}" ItemsSource="{Binding Path=SubElements}" >
+                            <TextBlock Text="Document" Tag="{Binding ActualDocuments}"/>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEDocumentModel}" >
+                            <TextBlock Text="{Binding Path=ActualDocument.Filename}" Tag="{Binding ActualDocument}"/>
+                        </HierarchicalDataTemplate>
+
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEDiagramsModel}" ItemsSource="{Binding Path=SubElements}" >
+                            <TextBlock Text="Diagram" Tag="{Binding ActualDiagram}"/>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type model:MMEDiagramModel}" >
+                            <TextBlock Text="{Binding Path=ActualDiagram.Filename}" Tag="{Binding ActualDiagram}"/>
+                        </HierarchicalDataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
+                <GridSplitter Grid.Row="1" Margin="0,-3" BorderThickness="0,3" BorderBrush="Transparent"
+                  HorizontalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+                <DataGrid Grid.Row="2" x:Name="attributeDataGrid" AutoGenerateColumns="False" 
+                          IsReadOnly="True" FontSize="12" FontFamily="Calibri">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="cstm.?" Binding="{Binding Path=Value.IsCustomAttribute}" />
+                        <DataGridTextColumn Header="Name" Binding="{Binding Path=Value.Name}"/>
+                        <DataGridTextColumn Header="Value" Binding="{Binding Path=Value.Value}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <GridSplitter Grid.Column="1" Margin="-3,0" BorderThickness="3,0" BorderBrush="Transparent"
+                  HorizontalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Slider x:Name="cutOffFrequency" ValueChanged="cutOffFrequency_ValueChanged" Value="0" TickPlacement="BottomRight" Ticks="60 180 600 1000 0" IsSnapToTickEnabled="True" Maximum="1000"/>
+                    <Label x:Name="cutOffLabel"/>
+                </StackPanel>
+                <oxy:Plot Grid.Row="1" x:Name="oxyDiagram" Title="{Binding Path=ActualChannel.Meta.Code}" Visibility="Hidden">
+                        <oxy:Plot.Series>
+                            <oxy:LineSeries ItemsSource="{Binding Path=OxyDataPoints}" Color="Red" />
+                        </oxy:Plot.Series>
+                        <oxy:Plot.Axes>
+                            <oxy:LinearAxis x:Name="yAxis" Position="Left" IsPanEnabled="True" Unit="{Binding Path=YUnit}"
+                                            MajorGridlineStyle="Solid" MajorGridlineThickness="2"
+                                            MinorGridlineStyle="Solid" MinorGridlineThickness="1"
+                                            />
+                            <oxy:LinearAxis x:Name="xAxis"  Position="Bottom" IsPanEnabled="True" Unit="s"
+                                            MajorGridlineStyle="Solid" MajorGridlineThickness="2"
+                                            MinorGridlineStyle="Solid" MinorGridlineThickness="1"
+                                            />
+                        </oxy:Plot.Axes>
+                    </oxy:Plot>
+
+                <Border Grid.Row="1" x:Name="imageBoxBorder" Visibility="Hidden" ClipToBounds="True" 
+                            MouseUp="imageBox_MouseUp" Background="#FF9B9B9B" Margin="3">
+                        <Image x:Name="imageBox"  Margin="0"
+                               MouseWheel="imageBox_MouseWheel" 
+                               MouseLeftButtonDown="imageBox_MouseLeftButtonDown" 
+                               MouseMove="imageBox_MouseMove" 
+                               MouseLeftButtonUp="imageBox_MouseLeftButtonUp">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform x:Name="scaleImage" />
+                                    <TranslateTransform x:Name="translateImage" />
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Border>
+                <Grid Grid.Row="1" x:Name="videoGrid" Visibility="Hidden">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <MediaElement x:Name="videoElement" Grid.Row="0" UnloadedBehavior="Stop" 
+                                      Opacity="1" LoadedBehavior="Manual" MediaEnded="videoElement_MediaEnded"
+                                      MediaOpened="videoElement_MediaOpened"
+                                      IsVisibleChanged="videoElement_IsVisibleChanged"
+                                      />
+                        <DockPanel Grid.Row="1">
+                            <Button x:Name="playVideoButton" Content="play" Click="playVideoButton_Click" Margin="5" Width="50" VerticalAlignment="Center" />
+                            <Label x:Name="sliderLabel" FontFamily="Courier New" VerticalAlignment="Center"/>
+                            <Slider x:Name="videoSlider" 
+                                ValueChanged="videoSlider_ValueChanged" IsMoveToPointEnabled="True" 
+                                AllowDrop="True" Margin="5"/>
+                        </DockPanel>
+                    </Grid>
+                <FlowDocumentReader Grid.Row="1" x:Name="documentReader" Visibility="Hidden"/>
+                <WebBrowser Grid.Row="1" x:Name="browser" Visibility="Hidden"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>

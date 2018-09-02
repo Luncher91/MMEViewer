@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9ED7BE57-548A-42BC-BA32-8055F698D93B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMEDataTests</RootNamespace>
+    <AssemblyName>MMEDataTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="MMEDataSetTests.cs" />
+    <Compile Include="MMEDataSetTests.TDMS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MMEData\MMEData.csproj">
+      <Project>{4A3A8B6B-3651-4270-9B8A-7B37372ABB5E}</Project>
+      <Name>MMEData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="testdata\3239\3239.mme" />
+    <None Include="testdata\3239\Channel\3239.001" />
+    <None Include="testdata\3239\Channel\3239.002" />
+    <None Include="testdata\3239\Channel\3239.003" />
+    <None Include="testdata\3239\Channel\3239.004" />
+    <None Include="testdata\3239\Channel\3239.005" />
+    <None Include="testdata\3239\Channel\3239.006" />
+    <None Include="testdata\3239\Channel\3239.007" />
+    <None Include="testdata\3239\Channel\3239.008" />
+    <None Include="testdata\3239\Channel\3239.009" />
+    <None Include="testdata\3239\Channel\3239.010" />
+    <None Include="testdata\3239\Channel\3239.011" />
+    <None Include="testdata\3239\Channel\3239.012" />
+    <None Include="testdata\3239\Channel\3239.013" />
+    <None Include="testdata\3239\Channel\3239.014" />
+    <None Include="testdata\3239\Channel\3239.015" />
+    <None Include="testdata\3239\Channel\3239.016" />
+    <None Include="testdata\3239\Channel\3239.017" />
+    <None Include="testdata\3239\Channel\3239.018" />
+    <None Include="testdata\3239\Channel\3239.019" />
+    <None Include="testdata\3239\Channel\3239.020" />
+    <None Include="testdata\3239\Channel\3239.021" />
+    <None Include="testdata\3239\Channel\3239.022" />
+    <None Include="testdata\3239\Channel\3239.023" />
+    <None Include="testdata\3239\Channel\3239.024" />
+    <None Include="testdata\3239\Channel\3239.025" />
+    <None Include="testdata\3239\Channel\3239.026" />
+    <None Include="testdata\3239\Channel\3239.027" />
+    <None Include="testdata\3239\Channel\3239.028" />
+    <None Include="testdata\3239\Channel\3239.029" />
+    <None Include="testdata\3239\Channel\3239.030" />
+    <None Include="testdata\3239\Channel\3239.031" />
+    <None Include="testdata\3239\Channel\3239.032" />
+    <None Include="testdata\3239\Channel\3239.033" />
+    <None Include="testdata\3239\Channel\3239.034" />
+    <None Include="testdata\3239\Channel\3239.035" />
+    <None Include="testdata\3239\Channel\3239.036" />
+    <None Include="testdata\3239\Channel\3239.037" />
+    <None Include="testdata\3239\Channel\3239.038" />
+    <None Include="testdata\3239\Channel\3239.039" />
+    <None Include="testdata\3239\Channel\3239.040" />
+    <None Include="testdata\3239\Channel\3239.041" />
+    <None Include="testdata\3239\Channel\3239.042" />
+    <None Include="testdata\3239\Channel\3239.043" />
+    <None Include="testdata\3239\Channel\3239.044" />
+    <None Include="testdata\3239\Channel\3239.045" />
+    <None Include="testdata\3239\Channel\3239.046" />
+    <None Include="testdata\3239\Channel\3239.047" />
+    <None Include="testdata\3239\Channel\3239.048" />
+    <None Include="testdata\3239\Channel\3239.049" />
+    <None Include="testdata\3239\Channel\3239.050" />
+    <None Include="testdata\3239\Channel\3239.051" />
+    <None Include="testdata\3239\Channel\3239.052" />
+    <None Include="testdata\3239\Channel\3239.053" />
+    <None Include="testdata\3239\Channel\3239.054" />
+    <None Include="testdata\3239\Channel\3239.055" />
+    <None Include="testdata\3239\Channel\3239.056" />
+    <None Include="testdata\3239\Channel\3239.057" />
+    <None Include="testdata\3239\Channel\3239.058" />
+    <None Include="testdata\3239\Channel\3239.059" />
+    <None Include="testdata\3239\Channel\3239.060" />
+    <None Include="testdata\3239\Channel\3239.061" />
+    <None Include="testdata\3239\Channel\3239.062" />
+    <None Include="testdata\3239\Channel\3239.063" />
+    <None Include="testdata\3239\Channel\3239.064" />
+    <None Include="testdata\3239\Channel\3239.065" />
+    <None Include="testdata\3239\Channel\3239.066" />
+    <None Include="testdata\3239\Channel\3239.067" />
+    <None Include="testdata\3239\Channel\3239.068" />
+    <None Include="testdata\3239\Channel\3239.069" />
+    <None Include="testdata\3239\Channel\3239.070" />
+    <None Include="testdata\3239\Channel\3239.071" />
+    <None Include="testdata\3239\Channel\3239.072" />
+    <None Include="testdata\3239\Channel\3239.073" />
+    <None Include="testdata\3239\Channel\3239.074" />
+    <None Include="testdata\3239\Channel\3239.075" />
+    <None Include="testdata\3239\Channel\3239.076" />
+    <None Include="testdata\3239\Channel\3239.077" />
+    <None Include="testdata\3239\Channel\3239.078" />
+    <None Include="testdata\3239\Channel\3239.079" />
+    <None Include="testdata\3239\Channel\3239.080" />
+    <None Include="testdata\3239\Channel\3239.081" />
+    <None Include="testdata\3239\Channel\3239.082" />
+    <None Include="testdata\3239\Channel\3239.083" />
+    <None Include="testdata\3239\Channel\3239.084" />
+    <None Include="testdata\3239\Channel\3239.085" />
+    <None Include="testdata\3239\Channel\3239.086" />
+    <None Include="testdata\3239\Channel\3239.087" />
+    <None Include="testdata\3239\Channel\3239.088" />
+    <None Include="testdata\3239\Channel\3239.089" />
+    <None Include="testdata\3239\Channel\3239.090" />
+    <None Include="testdata\3239\Channel\3239.091" />
+    <None Include="testdata\3239\Channel\3239.092" />
+    <None Include="testdata\3239\Channel\3239.093" />
+    <None Include="testdata\3239\Channel\3239.094" />
+    <None Include="testdata\3239\Channel\3239.095" />
+    <None Include="testdata\3239\Channel\3239.096" />
+    <None Include="testdata\3239\Channel\3239.097" />
+    <None Include="testdata\3239\Channel\3239.098" />
+    <None Include="testdata\3239\Channel\3239.099" />
+    <None Include="testdata\3239\Channel\3239.100" />
+    <None Include="testdata\3239\Channel\3239.101" />
+    <None Include="testdata\3239\Channel\3239.102" />
+    <None Include="testdata\3239\Channel\3239.103" />
+    <None Include="testdata\3239\Channel\3239.104" />
+    <None Include="testdata\3239\Channel\3239.105" />
+    <None Include="testdata\3239\Channel\3239.106" />
+    <None Include="testdata\3239\Channel\3239.107" />
+    <None Include="testdata\3239\Channel\3239.108" />
+    <None Include="testdata\3239\Channel\3239.109" />
+    <None Include="testdata\3239\Channel\3239.110" />
+    <None Include="testdata\3239\Channel\3239.111" />
+    <None Include="testdata\3239\Channel\3239.112" />
+    <None Include="testdata\3239\Channel\3239.113" />
+    <None Include="testdata\3239\Channel\3239.114" />
+    <None Include="testdata\3239\Channel\3239.115" />
+    <None Include="testdata\3239\Channel\3239.116" />
+    <None Include="testdata\3239\Channel\3239.117" />
+    <None Include="testdata\3239\Channel\3239.118" />
+    <None Include="testdata\3239\Channel\3239.119" />
+    <None Include="testdata\3239\Channel\3239.120" />
+    <None Include="testdata\3239\Channel\3239.121" />
+    <None Include="testdata\3239\Channel\3239.122" />
+    <None Include="testdata\3239\Channel\3239.123" />
+    <None Include="testdata\3239\Channel\3239.124" />
+    <None Include="testdata\3239\Channel\3239.125" />
+    <None Include="testdata\3239\Channel\3239.126" />
+    <None Include="testdata\3239\Channel\3239.127" />
+    <None Include="testdata\3239\Channel\3239.128" />
+    <None Include="testdata\3239\Channel\3239.129" />
+    <None Include="testdata\3239\Channel\3239.130" />
+    <None Include="testdata\3239\Channel\3239.131" />
+    <None Include="testdata\3239\Channel\3239.132" />
+    <None Include="testdata\3239\Channel\3239.133" />
+    <None Include="testdata\3239\Channel\3239.chn" />
+    <None Include="testdata\3239\NHTSA\3239.bar" />
+    <None Include="testdata\3239\NHTSA\3239.occ" />
+    <None Include="testdata\3239\NHTSA\3239.rst" />
+    <None Include="testdata\3239\NHTSA\3239.tst" />
+    <None Include="testdata\3239\NHTSA\3239.veh" />
+    <None Include="testdata\3239_lc\3239_lc.mme" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.001" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.002" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.003" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.004" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.005" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.006" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.007" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.008" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.009" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.010" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.011" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.012" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.013" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.014" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.015" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.016" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.017" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.018" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.019" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.020" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.021" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.022" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.023" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.024" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.025" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.026" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.027" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.028" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.029" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.030" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.031" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.032" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.033" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.034" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.035" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.036" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.037" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.038" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.039" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.040" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.041" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.042" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.043" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.044" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.045" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.046" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.047" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.048" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.049" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.050" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.051" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.052" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.053" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.054" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.055" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.056" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.057" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.058" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.059" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.060" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.061" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.062" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.063" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.064" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.065" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.066" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.067" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.068" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.069" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.070" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.071" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.072" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.073" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.074" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.075" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.076" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.077" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.078" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.079" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.080" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.081" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.082" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.083" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.084" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.085" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.086" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.087" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.088" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.089" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.090" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.091" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.092" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.093" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.094" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.095" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.096" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.097" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.098" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.099" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.100" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.101" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.102" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.103" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.104" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.105" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.106" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.107" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.108" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.109" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.110" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.111" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.112" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.113" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.114" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.115" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.116" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.117" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.118" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.119" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.120" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.121" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.122" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.123" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.124" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.125" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.126" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.127" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.128" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.129" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.130" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.131" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.132" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.133" />
+    <None Include="testdata\3239_lc\Channel\3239_lc.chn" />
+    <None Include="testdata\3239_lc\NHTSA\3239_lc.bar" />
+    <None Include="testdata\3239_lc\NHTSA\3239_lc.occ" />
+    <None Include="testdata\3239_lc\NHTSA\3239_lc.rst" />
+    <None Include="testdata\3239_lc\NHTSA\3239_lc.tst" />
+    <None Include="testdata\3239_lc\NHTSA\3239_lc.veh" />
+    <None Include="testdata\3239_lc\Photo\3239_lc.pho" />
+    <None Include="testdata\3239_lc\Photo\Thumbs.db" />
+    <None Include="testdata\98_7707\98_7707.mme" />
+    <None Include="testdata\98_7707\Movie\98_7707.mii" />
+    <None Include="testdata\98_7707\Photo\98_7707.pho" />
+    <None Include="testdata\98_7707\Photo\Thumbs.db" />
+    <None Include="testdata\AK3T02FO\AK3T02FO.MME" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.001" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.002" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.003" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.004" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.005" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.006" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.007" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.008" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.009" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.010" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.011" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.012" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.013" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.014" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.015" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.016" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.017" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.018" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.019" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.020" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.021" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.022" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.023" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.024" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.025" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.026" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.027" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.028" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.029" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.030" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.031" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.032" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.033" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.034" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.035" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.036" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.037" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.038" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.039" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.040" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.041" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.042" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.043" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.044" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.045" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.046" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.047" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.048" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.049" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.050" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.051" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.052" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.053" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.054" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.055" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.056" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.057" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.058" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.059" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.060" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.061" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.062" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.063" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.064" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.065" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.066" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.067" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.068" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.069" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.070" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.071" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.072" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.073" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.074" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.075" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.076" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.077" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.078" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.079" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.080" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.081" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.082" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.083" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.084" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.085" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.086" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.087" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.088" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.089" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.090" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.091" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.092" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.093" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.094" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.095" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.096" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.097" />
+    <None Include="testdata\AK3T02FO\Channel\AK3T02FO.CHN" />
+    <None Include="testdata\AK3T02SI\AK3T02SI.MME" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.001" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.002" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.003" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.004" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.005" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.006" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.007" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.008" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.009" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.010" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.011" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.012" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.013" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.014" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.015" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.016" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.017" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.018" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.019" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.020" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.021" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.022" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.023" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.024" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.025" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.026" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.027" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.028" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.029" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.030" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.031" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.032" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.033" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.034" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.035" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.036" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.037" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.038" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.039" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.040" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.041" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.042" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.043" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.044" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.045" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.046" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.047" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.048" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.049" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.050" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.051" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.052" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.053" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.054" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.055" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.056" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.057" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.058" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.059" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.060" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.061" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.062" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.063" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.064" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.065" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.066" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.067" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.068" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.069" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.070" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.071" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.072" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.073" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.074" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.075" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.076" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.077" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.078" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.079" />
+    <None Include="testdata\AK3T02SI\Channel\AK3T02SI.CHN" />
+    <None Include="testdata\tdmsTestData.tdms" />
+    <None Include="testdata\v00566.tdms" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.001" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.002" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.003" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.004" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.005" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.006" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.007" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.008" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.009" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.010" />
+    <None Include="testdata\VW1FGS15\Channel\VW1FGS15.chn" />
+    <None Include="testdata\VW1FGS15\Movie\5013_li_SPV-12,5mm-01%4012_9-2005.cor" />
+    <None Include="testdata\VW1FGS15\Movie\5013_re_SPV-12.5mm-01%4012_9-2005.cor" />
+    <None Include="testdata\VW1FGS15\Movie\VW1FGS15.mii" />
+    <None Include="testdata\VW1FGS15\VW1FGS15.mme" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="testdata\3239\3239.txt" />
+    <Content Include="testdata\3239\Document\3239_Changes_to_MME1dot2.txt" />
+    <Content Include="testdata\3239_lc\3239_lc.txt" />
+    <Content Include="testdata\3239_lc\Document\3239_lc_Changes_to_MME1dot2.txt" />
+    <Content Include="testdata\3239_lc\Photo\HTE001_dessous1.JPG" />
+    <Content Include="testdata\3239_lc\Photo\HTE002_dessous2.JPG" />
+    <Content Include="testdata\98_7707\98_7707.txt" />
+    <Content Include="testdata\98_7707\Photo\HTE001_dessous1.JPG" />
+    <Content Include="testdata\98_7707\Photo\HTE002_dessous2.JPG" />
+    <Content Include="testdata\VW1FGS15\Movie\VW1FGS15_X264_1159_Beamsplitter.AVI" />
+    <Content Include="testdata\VW1FGS15\Report\VW1FGS15_Head.png" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(ProjectDir)testdata" "$(TargetDir)testdata\" /S /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
